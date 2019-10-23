@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coloris{% endblock %}
+
+{% block body %}
+    <h1>Coloris</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdColoris</th>
+                <td>{{ colori.idColoris }}</td>
+            </tr>
+            <tr>
+                <th>Coloris</th>
+                <td>{{ colori.coloris }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('coloris_index') }}">back to list</a>
+
+    <a href="{{ path('coloris_edit', {'idColoris': colori.idColoris}) }}">edit</a>
+
+    {{ include('coloris/_delete_form.html.twig') }}
+{% endblock %}

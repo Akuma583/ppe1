@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Taillevet{% endblock %}
+
+{% block body %}
+    <h1>Edit Taillevet</h1>
+
+    {{ include('taillevet/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('taillevet_index') }}">back to list</a>
+
+    {{ include('taillevet/_delete_form.html.twig') }}
+{% endblock %}

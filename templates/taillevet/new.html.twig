@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Taillevet{% endblock %}
+
+{% block body %}
+    <h1>Create new Taillevet</h1>
+
+    {{ include('taillevet/_form.html.twig') }}
+
+    <a href="{{ path('taillevet_index') }}">back to list</a>
+{% endblock %}

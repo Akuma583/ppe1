@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coloris index{% endblock %}
+
+{% block body %}
+    <h1>Coloris index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdColoris</th>
+                <th>Coloris</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for colori in coloris %}
+            <tr>
+                <td>{{ colori.idColoris }}</td>
+                <td>{{ colori.coloris }}</td>
+                <td>
+                    <a href="{{ path('coloris_show', {'idColoris': colori.idColoris}) }}">show</a>
+                    <a href="{{ path('coloris_edit', {'idColoris': colori.idColoris}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('coloris_new') }}">Create new</a>
+{% endblock %}

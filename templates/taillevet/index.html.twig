@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Taillevet index{% endblock %}
+
+{% block body %}
+    <h1>Taillevet index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdTaillevet</th>
+                <th>Taille</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for taillevet in taillevets %}
+            <tr>
+                <td>{{ taillevet.idTaillevet }}</td>
+                <td>{{ taillevet.taille }}</td>
+                <td>
+                    <a href="{{ path('taillevet_show', {'idTaillevet': taillevet.idTaillevet}) }}">show</a>
+                    <a href="{{ path('taillevet_edit', {'idTaillevet': taillevet.idTaillevet}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('taillevet_new') }}">Create new</a>
+{% endblock %}

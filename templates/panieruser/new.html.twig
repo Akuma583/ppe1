@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Panieruser{% endblock %}
+
+{% block body %}
+    <h1>Create new Panieruser</h1>
+
+    {{ include('panieruser/_form.html.twig') }}
+
+    <a href="{{ path('panieruser_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Taillevet{% endblock %}
+
+{% block body %}
+    <h1>Taillevet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdTaillevet</th>
+                <td>{{ taillevet.idTaillevet }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ taillevet.taille }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('taillevet_index') }}">back to list</a>
+
+    <a href="{{ path('taillevet_edit', {'idTaillevet': taillevet.idTaillevet}) }}">edit</a>
+
+    {{ include('taillevet/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Coloris{% endblock %}
+
+{% block body %}
+    <h1>Edit Coloris</h1>
+
+    {{ include('coloris/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('coloris_index') }}">back to list</a>
+
+    {{ include('coloris/_delete_form.html.twig') }}
+{% endblock %}
